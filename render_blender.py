@@ -43,8 +43,10 @@ bpy.context.scene.use_nodes = True
 tree = bpy.context.scene.node_tree
 links = tree.links
 # Add passes for additionally dumping albedo and normals.
-bpy.context.scene.render.layers["RenderLayer"].use_pass_normal = True
-bpy.context.scene.render.layers["RenderLayer"].use_pass_color = True
+# bpy.context.scene.render.layers["RenderLayer"].use_pass_normal = True
+bpy.types.RenderLayer.use_pass_normal = True
+# bpy.context.scene.render.layers["RenderLayer"].use_pass_color = True
+bpy.types.BakeSettings.use_pass_color = True
 bpy.context.scene.render.image_settings.file_format = args.format
 bpy.context.scene.render.image_settings.color_depth = args.color_depth
 
