@@ -40,7 +40,7 @@ import cv2
 
 # Set up rendering of depth map.
 bpy.context.scene.use_nodes = True
-tree = bpy.context.scene.node_tree
+tree = bpy.types.Scene.node_tree
 links = tree.links
 # Add passes for additionally dumping albedo and normals.
 # bpy.context.scene.render.layers["RenderLayer"].use_pass_normal = True
